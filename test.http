@@ -1,0 +1,129 @@
+### Get all donors
+GET http://localhost:8080/api/donors
+
+### Add donor
+POST http://localhost:8080/api/donors
+Content-Type: application/json
+
+{
+    "name": "Rahul Patil",
+    "bloodGroup": "O+",
+    "age": 22,
+    "gender": "Male",
+    "phone": "9876543210",
+    "city": "Jalgaon"
+}
+### Get donor by ID
+GET http://localhost:8080/api/donors/3
+
+### Delete donor
+DELETE http://localhost:8080/api/donors/3
+
+### Add donor for update testing
+POST http://localhost:8080/api/donors
+Content-Type: application/json
+
+{
+    "name": "Rahul Patil",
+    "bloodGroup": "O+",
+    "age": 22,
+    "gender": "Male",
+    "phone": "9876543210",
+    "city": "Jalgaon"
+}
+
+### Update donor
+PUT http://localhost:8080/api/donors/4
+Content-Type: application/json
+
+{
+    "name": "Rahul Patil",
+    "bloodGroup": "A+",
+    "age": 23,
+    "gender": "Male",
+    "phone": "9999999999",
+    "city": "Pune"
+}
+### Search by blood group
+GET http://localhost:8080/api/donors/bloodgroup/A+
+
+### Search by city
+GET http://localhost:8080/api/donors/city/Pune
+
+### Test validation
+POST http://localhost:8080/api/donors
+Content-Type: application/json
+
+{
+    "name": "",
+    "bloodGroup": "",
+    "age": 17,
+    "gender": "Male",
+    "phone": "9876543210",
+    "city": "Pune"
+}
+### Valid donor after validation
+POST http://localhost:8080/api/donors
+Content-Type: application/json
+
+{
+    "name": "Amit Sharma",
+    "bloodGroup": "O+",
+    "age": 24,
+    "gender": "Male",
+    "phone": "9876543210",
+    "city": "Jalgaon"
+}
+### Test detailed validation
+POST http://localhost:8080/api/donors
+Content-Type: application/json
+
+{
+    "name": "",
+    "bloodGroup": "",
+    "age": 17,
+    "gender": "Male",
+    "phone": "9876543210",
+    "city": "Pune"
+}
+### Test strong validation
+POST http://localhost:8080/api/donors
+Content-Type: application/json
+
+{
+    "name": "A",
+    "bloodGroup": "XYZ",
+    "age": 17,
+    "gender": "Male",
+    "phone": "12345",
+    "city": ""
+}
+### Valid donor
+POST http://localhost:8080/api/donors
+Content-Type: application/json
+
+{
+    "name": "Sahil Patil",
+    "bloodGroup": "B+",
+    "age": 22,
+    "gender": "Male",
+    "phone": "9876543210",
+    "city": "Jalgaon"
+}
+### Test Update
+PUT http://localhost:8080/api/donors/4
+Content-Type: application/json
+
+{
+    "name": "Rahul Patil",
+    "bloodGroup": "A+",
+    "age": 24,
+    "gender": "Male",
+    "phone": "9999999999",
+    "city": "Pune"
+}
+### Get donor count
+GET http://localhost:8080/api/donors/count
+### Blood Group Donor Count - A+
+GET http://localhost:8080/api/donors/count/A+
+GET http://localhost:8080/api/donors
